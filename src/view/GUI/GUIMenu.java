@@ -29,6 +29,9 @@ public class GUIMenu extends JPanel implements ActionListener{
 	
 	private GameController controller;
 	
+	private String[] strategies = Strategies.getNames();
+	
+	/*
 	private String[] strategies = {
 			"Conway",
 			"Bubble",
@@ -36,7 +39,7 @@ public class GUIMenu extends JPanel implements ActionListener{
 			"LiveFreeOrDie",
 			"Seeds"
 	};
-	
+	*/
 	private JButton animate;
 	private JButton nexGenerat;
 	private JButton exit;
@@ -156,7 +159,7 @@ public class GUIMenu extends JPanel implements ActionListener{
 	}
 
 	private void defineStrategy() {
-		int strategy = strategyBox.getSelectedIndex() + 1;
+		int strategy = strategyBox.getSelectedIndex();
 		try{
 			controller.defineStrategy(Strategies.getStrategy(strategy));
 		}catch (InvalidStrategyException e) {
