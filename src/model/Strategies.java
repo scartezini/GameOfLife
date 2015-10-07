@@ -1,5 +1,7 @@
 package model;
 
+import java.util.ArrayList;
+
 import model.rules.*;
 
 
@@ -16,31 +18,54 @@ public enum Strategies {
 		public GameStrategy getGameStrategy(){
 			return new Conway();
 		}
+		@Override
+		public String toString(){
+			return "Conway";
+		}
 	},
 	BUBBLE{
 		public GameStrategy getGameStrategy(){
 			return new Bubble();
 		}
-		
+		@Override
+		public String toString(){
+			return "Bubble";
+		}
 	},
 	HIGH_LIFE{
 		public GameStrategy getGameStrategy(){
 			return new HighLife();
+		}
+		@Override
+		public String toString(){
+			return "Highlife";
 		}
 	},
 	LIFE_WITH_OUT_DEATH{
 		public GameStrategy getGameStrategy(){
 			return new LifeWithoutDeath();
 		}
+		@Override
+		public String toString(){
+			return "Life without death";
+		}
 	},
 	LIVE_FREE_OR_DIE{
 		public GameStrategy getGameStrategy(){
 			return new LiveFreeOrDie();
 		}
+		@Override
+		public String toString(){
+			return "Live free or die";
+		}
 	},
 	SEEDS{
 		public GameStrategy getGameStrategy(){
 			return new Seeds();
+		}
+		@Override
+		public String toString(){
+			return "Seeds";
 		}
 	};
 	
@@ -51,21 +76,26 @@ public enum Strategies {
 		return strategy.getGameStrategy();
 	}
 	
-	public static Strategies getStrategy(int strategy) throws InvalidStrategyException {
-		switch (strategy) {
-		 case 1: return CONWAY;
-		 case 2: return BUBBLE;
-		 case 3: return HIGH_LIFE;
-		 case 4: return LIFE_WITH_OUT_DEATH;
-		 case 5: return LIVE_FREE_OR_DIE;
-		 case 6: return SEEDS;
+	public static String[] getNames() {
+		String[] result = new String[Strategies.values().length];
+		ArrayList<String> names = new ArrayList<String>();
+		for(Strategies s : Strategies.values()){
+			names.add(s.toString());
 		}
-		throw new InvalidStrategyException();
+		names.toArray(result);
+		return result;
+	}
+	
+	public static Strategies getStrategy(int strategy) throws InvalidStrategyException {
+		if(strategy >= Strategies.values().length || strategy < 0) {
+			throw new InvalidStrategyException();
+		}
+		return Strategies.values()[strategy];
 	}
 	
 	public static boolean validateStrategy(int strategy) {
 		int amountOfStrategies = Strategies.values().length;
 		
-		return (strategy > 0) && (strategy <= amountOfStrategies);
+		return (strategy >= 0) && (strategy < amountOfStrategies);
 	}
 }
