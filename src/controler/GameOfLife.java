@@ -33,7 +33,7 @@ public class GameOfLife {
 		int width = Integer.parseInt (JOptionPane.showInputDialog("Digite a largura do tabuleiro: ") );
 		
 		while ( width < 10 || width > 30) {
-			width = Integer.parseInt (JOptionPane.showInputDialog(null, "Voce deve digitar um numero entre 10 e 50!") );
+			width = Integer.parseInt (JOptionPane.showInputDialog(null, "Voce deve digitar um numero entre 10 e 30!") );
 		}
 		
 		return width;

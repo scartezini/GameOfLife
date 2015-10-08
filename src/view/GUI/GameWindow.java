@@ -21,7 +21,7 @@ public class GameWindow extends JFrame{
 	private Container pane = getContentPane();
 	
 	public GameWindow(GameController controller){
-		super("Game of Life by:scartezini & rbonifacio");
+		super("Game of Life by:scartezini & rkury");
 		
 		createWindow();
 		
