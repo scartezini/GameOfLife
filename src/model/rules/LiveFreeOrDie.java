@@ -13,7 +13,7 @@ public class LiveFreeOrDie extends GameStrategy {
 
 	@Override
 	public String getName() {
-		return "LiveFreeOrDie";
+		return "Live Free or Die";
 	}
 
 	@Override

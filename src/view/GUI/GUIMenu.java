@@ -31,15 +31,6 @@ public class GUIMenu extends JPanel implements ActionListener{
 	
 	private String[] strategies = Strategies.getNames();
 	
-	/*
-	private String[] strategies = {
-			"Conway",
-			"Bubble",
-			"HighLife",
-			"LiveFreeOrDie",
-			"Seeds"
-	};
-	*/
 	private JButton animate;
 	private JButton nexGenerat;
 	private JButton exit;
