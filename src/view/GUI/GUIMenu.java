@@ -11,8 +11,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.Timer;
 
-import controler.GameController;
-
+import controller.GameController;
 import model.InvalidStrategyException;
 import model.Strategies;
 

@@ -1,4 +1,4 @@
-package controler;
+package controller;
 
 import javax.swing.JOptionPane;
 

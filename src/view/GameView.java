@@ -1,7 +1,7 @@
 package view;
 
 
-import controler.GameController;
+import controller.GameController;
 import model.GameEngine;
 import observer.Observer;
 

@@ -2,7 +2,7 @@ package view.GUI;
 
 import javax.swing.SwingUtilities;
 
-import controler.GameController;
+import controller.GameController;
 import model.GameEngine;
 import view.GameView;
 

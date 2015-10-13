@@ -10,7 +10,7 @@ import java.awt.Toolkit;
 
 import javax.swing.JFrame;
 
-import controler.GameController;
+import controller.GameController;
 
  
 @SuppressWarnings("serial")
