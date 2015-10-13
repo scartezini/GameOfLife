@@ -129,15 +129,18 @@ public class GUIMenu extends JPanel implements ActionListener{
 	}
 
 	private void animationDelay() {
-		nextGeneration();
-		displayedGenerations++;
+	
+		
 		if((displayedGenerations == generations) || (controller.numberOfAliveCells() == 0)){
 			if(controller.numberOfAliveCells() == 0){
 				JOptionPane.showMessageDialog(null, "A população morreu completamente!");
 			}
 			delay.stop();
 		}
-			
+		if(generations != 0){
+			nextGeneration();
+			displayedGenerations++;
+		}
 	}
 
 	private void exit() {
@@ -167,8 +170,12 @@ public class GUIMenu extends JPanel implements ActionListener{
 			delay.setRepeats(true);
 			delay.start();
 		} catch (NumberFormatException ex) {
-			JOptionPane.showMessageDialog(null, "Escolha um numero valido de gerações!");
-			animate();
+			if(ex.getMessage().equals("null")){
+				
+			}else{
+				JOptionPane.showMessageDialog(null, "Escolha um numero valido de gerações!");
+				animate();
+			}
 		}	
 	}
 

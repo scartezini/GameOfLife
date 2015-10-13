@@ -21,21 +21,31 @@ public class GameOfLife {
 	}
 
 	private int getHeigth() {
-		int heigth = Integer.parseInt (JOptionPane.showInputDialog("Digite a altura do tabuleiro: ") );
-		
-		while ( heigth < 10 || heigth > 30) {
-			heigth = Integer.parseInt (JOptionPane.showInputDialog(null, "Voce deve digitar um numero entre 10 e 30!") );
+		try{
+			int heigth = Integer.parseInt (JOptionPane.showInputDialog("Digite a altura do tabuleiro: ") );
+			
+			while ( heigth < 10 || heigth > 30) {
+				heigth = Integer.parseInt (JOptionPane.showInputDialog(null, "Voce deve digitar um numero entre 10 e 30!") );
+			}
+			return heigth;
+		}catch(NumberFormatException ex){
+			System.exit(1);
+			return 0;
 		}
-		return heigth;
 	}
 
 	private int getwidth() {
-		int width = Integer.parseInt (JOptionPane.showInputDialog("Digite a largura do tabuleiro: ") );
-		
-		while ( width < 10 || width > 30) {
-			width = Integer.parseInt (JOptionPane.showInputDialog(null, "Voce deve digitar um numero entre 10 e 30!") );
+		try{
+			int width = Integer.parseInt (JOptionPane.showInputDialog("Digite a largura do tabuleiro: ") );
+			
+			while ( width < 10 || width > 30) {
+				width = Integer.parseInt (JOptionPane.showInputDialog(null, "Voce deve digitar um numero entre 10 e 30!") );
+			}
+			
+			return width;
+		}catch(NumberFormatException ex){
+			System.exit(1);
+			return 0;
 		}
-		
-		return width;
 	}
 }
